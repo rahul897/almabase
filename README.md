@@ -9,10 +9,10 @@ entry endpoint - /remind
 Was unable to setup Socketio to show action in seperate div,Instead every minute page is refreshed to show actions
 
 Algorithm to check time
-> while adding remind submitted,traveltime is calculated from api and stored along with time
+> after submitting remind form,traveltime is calculated from api and stored along with time
 >
 >every minute a scheduler runs and picks earliest 10 remind times and calculate
->timeleft = now - travaltime
+>timeleft = now - traveltime
 >
 >if timeleft > 1hr/pow(2,level)
 >get time to get uber and check timeleft - uber ~ 1min send mail
@@ -24,6 +24,7 @@ Algorithm to check time
 Currently send mail functionality is not implemented instead just shown as action in 
 bottom of app.
 Ideally it should be pushed to message queue and processed.
+
 To run the server
 
     pip install -r requirements.txt
