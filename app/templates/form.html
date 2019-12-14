@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Remind</h1>
+    <form action="{{ url_for('remindUser') }}" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email }}
+        </p>
+        <p>
+            {{ form.source.label }}<br>
+            {{ form.source }}
+        </p>
+        <p>
+            {{ form.destination.label }}<br>
+            {{ form.destination }}
+        </p>
+        <p>
+            {{ form.time.label }}<br>
+            {{ form.time}}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <hr>
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>#}
+{#    <script type="text/javascript">#}
+{#      var socket = io.connect('http://' + document.domain + ':' + location.port + '/');#}
+{#      socket.on('message', function (msg) {#}
+{#      $( 'div.message_holder' ).append( '<div><b style="color: #000">'+msg+'</div>' )#}
+{#        });#}
+{#      socket.on('connect', function open() {#}
+{#          console.log('connected');#}
+{#          socket.send("hop");#}
+{#        $( 'div.message_holder' ).append( '<div><b style="color: #000">'+"hi"+'</div>' )#}
+{##}
+{#      })#}
+{##}
+{##}
+{#    </script>#}
+
+    <div class="message_holder">
+        {% for event in events %}
+            {{ event.time.strftime("%H:%M") }} requested {{ event.api }} api for {{ event.email }}<br>
+        {% endfor %}
+    </div>
+    <script type="text/javascript">
+      var timeout = setTimeout("location.reload(true);",60000);
+      function resetTimeout() {
+        clearTimeout(timeout);
+        timeout = setTimeout("location.reload(true);",60000);
+      }
+    </script>
+
+{% endblock %}
