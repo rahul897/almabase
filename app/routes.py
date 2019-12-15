@@ -7,7 +7,7 @@ from datetime import datetime
 from app import app, db, scheduler # ,socketio
 import requests
 import base64
-google_url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins={}&destinations={}&mode=driving&key='+base64.decode('QUl6YVN5QVFCNGVpQ251UDhSWHQweFBMWW1zQ0RxcldYNGlGS0dj')
+google_url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins={}&destinations={}&mode=driving&key='+base64.b64decode('QUl6YVN5QVFCNGVpQ251UDhSWHQweFBMWW1zQ0RxcldYNGlGS0dj').decode('utf-8')
 uber_url = 'https://rr1iky5f5f.execute-api.us-east-1.amazonaws.com/api/estimate/time?start_longitude={}&start_latitude={}'
 
 @app.route('/')

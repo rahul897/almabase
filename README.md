@@ -2,6 +2,8 @@
 
 entry endpoint - /remind
 
+deployed at [bookuberab.herokuapp.com](https://bookuberab.herokuapp.com/remind)
+
 ### Models
 - User(email,source(lat,long),destination(lat,long),time(remind time),traveltime,Level(time offset from 1 hr),checked(whether current level is checked))
 - Action(email,api,time(time of action)
@@ -28,4 +30,7 @@ Ideally it should be pushed to message queue and processed.
 To run the server
 
     pip install -r requirements.txt
+    #python app db init
+    #python app db migrate
+    python app db upgrade
     python app
