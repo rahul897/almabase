@@ -2,6 +2,9 @@
 
 entry endpoint - /remind
 
+
+https://youtu.be/GP2zdStdiVc
+
 deployed at [bookuberab.herokuapp.com](https://bookuberab.herokuapp.com/remind)
 
 ### Models
