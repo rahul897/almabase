@@ -2,7 +2,7 @@
 
 entry endpoint - /remind
 
-<iframe src="https://editor.p5js.org/p5/embed/rBqmyGZlS9"></iframe>
+<iframe width="720" height="400" src="https://editor.p5js.org/p5/embed/rBqmyGZlS9"></iframe>
 
 deployed at [bookuberab.herokuapp.com](https://bookuberab.herokuapp.com/remind)
 
